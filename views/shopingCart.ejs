@@ -1,0 +1,84 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card{
+            margin: 20px;
+            padding:20px;
+            color: black;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+            width: 40%;
+            font-family: "Nunito Sans", "Open Sans", sans-serif;
+            border-radius: 10px;
+        }
+
+        .header {
+            background-color: #1abc9c;
+            color: white;
+            font-size: 30px;
+            text-align: left;
+            padding: 10px;
+            width: 30%;
+            margin: 20px;
+        }
+
+        img{
+            width: 25%;
+            float: left;
+            margin: 20px;
+        }
+
+        .bayar{
+            background-color: #24ffd33b ;
+            border-radius: 10px;
+            position: fixed;
+            padding: 30px;
+            border: 3px solid #1abc9c;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            width: 300px;
+            height: 100px;
+            right: 600px;
+            bottom: 500px;
+        }
+
+        button{
+            border-radius: 3px;
+            border:1px solid white;
+            background-color: #1abc9c;
+            color: white;
+            padding: 7px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div style="float: left;">
+        <h1 class="header">keranjang belanja</h1>
+        <% console.log(item) %> 
+        <% console.log('cek') %> 
+        <% let jumlah = 0 %> 
+        <% let barang = 0 %> 
+        <% for(let i = 0 ; i < item.length ; i++) {%>
+            <div class="card">
+                <img src=" <%= item[i].img  %>" alt="">
+                <div>
+                    <h3><%=item[i].item_name %> </h3>
+                    <p><%=item[i].spesifikasi %> </p>
+                    <p><%=item[i].alamat %> </p>
+                    <p>Rp.<%=item[i].harga %>.000 </p>
+                    <% jumlah += item[i].harga %> 
+                    <% barang += 1 %> 
+                </div>
+            </div>
+        <% } %>  
+    </div>
+    <div class="bayar">
+        <p>total harga (<%= barang %> barang) </p> <p > Rp.<%= jumlah %>.000 </p>
+        <button>beli  (<%= barang %> barang)</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .card {
+            margin: 20px;
+            padding:20px;
+            color: black;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+            width: 40%;
+            float: left;
+            font-family: "Nunito Sans", "Open Sans", sans-serif;
+        }
+
+    .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+
+    img{
+        width: 50%;
+        float: left;
+        margin: 20px;
+    }
+
+    .header {
+        background-color: 1abc9c;
+        color: white;
+        font-size: 30px;
+        text-align: left;
+        padding: 10px;
+    }
+
+    button{
+        border-radius: 5px;
+        background-color: white;
+        border-color: 1abc9c;
+    }
+    
+    a{
+        color: rgb(49, 49, 49);
+    }
+</style>
+<body>
+    <div class="card">
+        <h1 class="header">diorder app</h1>
+        <hr>
+        <% console.log(item) %> 
+        <% console.log('masuk') %> 
+        <img src="<%= item.img %> " alt="">
+        <h1><%= item.item_name %></h1>
+        <p> spesifikasi: <%= item.spesifikasi %> </p>
+        <p> harga Rp <%= item.harga %>.000 </p>
+        <p> alamat: <%= item.alamat %> </p>
+        <button><a id="<%= item.id %> " href="/shopingCart/<%= item.id %> ">masukan kernjang</a></button>
+        <button><a href="/shopingCart">langsung beli</a></button>
+    </div>
+</body>
+</html>

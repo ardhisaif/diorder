@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+                font-family: Arial;
+                margin: 5;
+            }
+          
+            /* Header/Logo Title */
+        .header {
+            padding: 60px;
+            text-align: center;
+            background: #1abc9c;
+            color: white;
+            font-size: 100px;
+        }
+        
+        /* Page Content */
+        .content {padding:20px;
+        text-align: center;
+        color: black;
+        }
+
+        input{
+            width: 20%;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="header">Mari Kita Login</h1>
+    <div class="content">
+        <form action="/login" method="POST">
+                <input type="text"  placeholder="name or email"  value="<%= err ? dataLogin.name : "" %> " name="name">
+                <input type="password" value="<%=err ? dataLogin.password : "" %> " name="password" placeholder="password">
+                <button type="submit">submit</button>
+                <% if(err) {%> 
+                     <p style="color: red;"><%= err %> </p>
+                <% } %> 
+        </form>
+        <p>belum punya akun? silahkan <a href="register">mendaftar</a></p>
+    </div>
+</body>
+</html>

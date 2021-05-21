@@ -1,0 +1,85 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        body {
+                font-family: Arial;
+            }
+          
+            /* Header/Logo Title */
+        .header {
+            padding: 20px;
+            background-color: #1abc9c;
+            color: white;
+            font-size: 60px;
+            text-align: center;
+        }
+        
+        
+        /* Page Content */
+        .card {
+            text-align: center;
+            margin: 15px;
+            color: black;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+            width: 45%;
+            float: left;
+            border-radius: 10px;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            padding: 3px;
+            border-color: white;
+        }
+
+        img{
+            width: 45%;
+            float: left;
+            padding: 20px;
+        }
+        .main{
+            padding: 16px;
+            margin-top: 30px;
+            height: 1500px;
+        }
+
+        button{
+            border-radius: 5px;
+            background-color: white;
+            border-color: 1abc9c;
+        }
+
+        button:hover{
+            background-color: rgba(209, 209, 209, 0.308);
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        }
+    </style> 
+</head>
+<body>
+    <div>
+        <h1 class="header">diorder app</h1>
+    </div>
+    <div class="main">
+        <% console.log(item) %> 
+        <% console.log('masuk') %> 
+        <%for(let i = 0 ; i < item.length ; i++){%>
+            <div class="card">
+                <img src="<%= item[i].img %> " alt="">
+                <h2><%=item[i].item_name%></h2>
+                <hr>
+                <p> <%= item[i].spesifikasi %> </p>
+                <p> harga Rp <%= item[i].harga %>.000 </p>
+                <p> alamat: <%= item[i].alamat %> </p>
+                <button><a href="/main/<%= item[i].id %> ">open</a></button>
+                
+            </div>
+        <%}%>
+    </div>
+</body>
+</html>
