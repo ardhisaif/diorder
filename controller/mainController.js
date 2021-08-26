@@ -14,7 +14,7 @@ class MainController{
 
     static open(req, res){
         let id = +req.params.id
-        MainModel.open(id, (err, data) =>{
+        MainModel.open(id, (err, data) =>{ 
             if (err) {
                 res.send(err)
             }else{

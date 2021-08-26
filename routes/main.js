@@ -5,6 +5,6 @@ const MainController = require("../controller/mainController")
 //     res.render('main')
 // })
 app.get('/', MainController.show)
-app.get('/:id', MainController.open)
+app.get('/:id', MainController.open) 
 
 module.exports = app
